@@ -1,9 +1,3 @@
-/*
-* @Author: Rosen
-* @Date:   2018-01-23 18:03:55
-* @Last Modified by:   Rosen
-* @Last Modified time: 2018-01-26 13:41:51
-*/
 
 import React        from 'react';
 import { Link }     from 'react-router-dom';
@@ -27,7 +21,7 @@ class Home extends React.Component{
         }
     }
     componentDidMount(){
-        this.loadCount();
+        // this.loadCount();
     }
     loadCount(){
         _statistic.getHomeCount().then(res => {
@@ -46,7 +40,7 @@ class Home extends React.Component{
                             <p className="count">{this.state.userCount}</p>
                             <p className="desc">
                                 <i className="fa fa-user-o"></i>
-                                <span>用户总数</span>
+                                <span>医院总数</span>
                             </p>
                         </Link>
                     </div>
@@ -55,7 +49,7 @@ class Home extends React.Component{
                             <p className="count">{this.state.productCount}</p>
                             <p className="desc">
                                 <i className="fa fa-list"></i>
-                                <span>商品总数</span>
+                                <span>在线设备总数</span>
                             </p>
                         </Link>
                     </div>
@@ -64,7 +58,7 @@ class Home extends React.Component{
                             <p className="count">{this.state.orderCount}</p>
                             <p className="desc">
                                 <i className="fa fa-check-square-o"></i>
-                                <span>订单总数</span>
+                                <span>离线数</span>
                             </p>
                         </Link>
                     </div>

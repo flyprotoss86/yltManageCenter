@@ -1,9 +1,3 @@
-/*
-* @Author: Rosen
-* @Date:   2018-01-23 20:00:02
-* @Last Modified by:   Rosen
-* @Last Modified time: 2018-01-26 13:43:14
-*/
 import React                from 'react';
 import { Link, NavLink }    from 'react-router-dom';
 
@@ -23,41 +17,62 @@ class NavSide extends React.Component{
                             </NavLink>
                         </li>
                         <li className="active">
-                            <Link to="/product">
+                            <Link to="/hospital">
                                 <i className="fa fa-list"></i>
-                                <span>商品</span>
+                                <span>医院管理</span>
                                 <span className="fa arrow"></span>
                             </Link>
                             <ul className="nav nav-second-level collapse in">
                                 <li>
-                                    <NavLink to="/product" activeClassName="active-menu">商品管理</NavLink>
+                                    <NavLink to="/hospital" activeClassName="active-menu">医院管理</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/product-category" activeClassName="active-menu">品类管理</NavLink>
+                                    <NavLink to="/department" activeClassName="active-menu">科室管理</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/doctor" activeClassName="active-menu">医生管理</NavLink>
                                 </li>
                             </ul>
                         </li>
                         <li className="active">
-                            <Link to="/order">
+                            <Link to="/allfeature">
                                 <i className="fa fa-check-square-o"></i>
-                                <span>订单</span>
+                                <span>配置管理</span>
                                 <span className="fa arrow"></span>
                             </Link>
                             <ul className="nav nav-second-level collapse in">
                                 <li>
-                                    <NavLink to="/order" activeClassName="active-menu">订单管理</NavLink>
+                                    <NavLink to="/feature" activeClassName="active-menu">全部功能</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/hospital-feature/" activeClassName="active-menu">功能配置</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/menu" activeClassName="active-menu">菜单配置</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/recc/type/appindex" activeClassName="active-menu">推荐配置</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/recc/type/zhihui" activeClassName="active-menu">智慧医院</NavLink>
                                 </li>
                             </ul>
                         </li>
                         <li className="active">
                             <Link to="/user">
                                 <i className="fa fa-user-o"></i>
-                                <span>用户</span>
+                                <span>版本控制</span>
                                 <span className="fa arrow"></span>
                             </Link>
                             <ul className="nav nav-second-level collapse in">
                                 <li>
-                                    <NavLink to="/user" activeClassName="active-menu">用户管理</NavLink>
+                                    <NavLink to="/version" activeClassName="active-menu">版本查询</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/publish" activeClassName="active-menu">版本发布</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/user" activeClassName="active-menu">版本更新</NavLink>
                                 </li>
                             </ul>
                         </li>

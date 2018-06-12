@@ -7,6 +7,8 @@
 
 class MUtil{
     request(param){
+        if(!param.url.startsWith("http"))
+            param.url = 'http://localhost:8989'+param.url
         return new Promise((resolve, reject) => {
             $.ajax({
                 type        : param.type        || 'get',
@@ -46,6 +48,10 @@ class MUtil{
     }
     // 成功提示
     successTips(successMsg){
+        if(successMsg.msg){
+            alert(successMsg.msg)
+            return
+        }
         alert(successMsg || '操作成功！');
     }
     // 错误提示
@@ -68,6 +74,9 @@ class MUtil{
             alert('该类型不能用于本地存储');
         }
     }
+
+
+
     // 取出本地存储内容
     getStorage(name){
         let data = window.localStorage.getItem(name);
@@ -81,6 +90,30 @@ class MUtil{
     // 删除本地存储
     removeStorage(name){
         window.localStorage.removeItem(name);
+    }
+
+    // 时间函数-格式化
+    toDTstr(time){
+        return new Date(time*1000).toLocaleString()
+    }
+
+    getBoolStr(val){
+        return (val ? '是':'否')
+    }
+
+    getStatusStr(status){
+        return this.StatusList().filter(e=>e.status === status)[0].desc
+    }
+
+
+    StatusList (){
+        return [
+            {status: 0, desc: "上线"},
+            {status: 1, desc: "下线"},
+            {status: 2, desc: "开发中"},
+            {status: 3, desc: "已删除"},
+            {status: 4, desc: "上线"}
+        ]
     }
 }
 

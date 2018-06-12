@@ -19,12 +19,32 @@ import OrderDetail      from 'page/order/detail.jsx';
 import UserList         from 'page/user/index.jsx';
 import ErrorPage        from 'page/error/index.jsx';
 
+
+import HospitalList from "page/hospital/hospital-list.jsx"
+import HospitalDetail from "page/hospital/hospital-detail.jsx"
+import FeatureList from "page/settings/feature-list.jsx"
+import FeatureDetail from "page/settings/feature-detail.jsx"
+import HospitalFeatureList from "page/settings/hospital-feature-list.jsx"
+import HospitalFeatureDetail from "page/settings/hospital-feature-detail.jsx"
+
 class App extends React.Component{
     render(){
         let LayoutRouter = (
             <Layout> 
                 <Switch>
                     <Route exact path="/" component={Home}/>
+
+                    <Route path="/hospital/list" component={HospitalList}/>
+                    <Route path="/hospital/detail/:id?" component={HospitalDetail}/>
+                    <Redirect exact from="/hospital" to="/hospital/list"/>
+
+                    <Route path="/feature/list" component={FeatureList}/>
+                    <Route path="/feature/detail/:id?" component={FeatureDetail}/>
+                    <Redirect exact from="/feature" to="/feature/list"/>
+
+                    <Route path="/hospital-feature/:id?" component={HospitalFeatureList}/>
+                    <Route path="/hospital-feature-detail/:hospitalId/feature/:featureId?" component={HospitalFeatureDetail}/>
+
                     <Route path="/product" component={ProductRouter}/>
                     <Route path="/product-category" component={ProductRouter}/>
                     <Route path="/order/index" component={OrderList}/>

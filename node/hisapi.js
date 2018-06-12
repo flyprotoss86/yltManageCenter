@@ -2,32 +2,37 @@ const koa = require('koa')
 const route = require('koa-route')
 const app = new koa()
 
+app.use((ctx, next) => {
+    ctx.res.setHeader("access-control-allow-origin","*")
+    next()
+})
+
 // 医院
 app.use(route.post('/hospital/list', ctx => {
     ctx.response.type = 'json'
     ctx.response.body = {
         "status": 0,
-        "data": [
-            {
-                "id": 1,
-                "alias": "cyl",
-                "province": "北京",
-                "hospitalName":"北京垂杨柳医院",
-                "hospitalDesc":"desc",
-                // "hospitalContent":"content",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
-            },{
-                "id": 2,
-                "alias": "bjyy",
-                "province": "北京",
-                "hospitalName":"北京医院",
-                "hospitalDesc":"desc",
-                // "hospitalContent":"content",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
-            }
-        ]
+        "data":[
+                    {
+                        "id": 1,
+                        "alias": "cyl",
+                        "province": "北京",
+                        "hospitalName":"北京垂杨柳医院",
+                        "hospitalDesc":"desc",
+                        // "hospitalContent":"content",
+                        "createdAt":1514736000,
+                        "updatedAt":1517414400
+                    },{
+                        "id": 2,
+                        "alias": "bjyy",
+                        "province": "北京",
+                        "hospitalName":"北京医院",
+                        "hospitalDesc":"desc",
+                        // "hospitalContent":"content",
+                        "createdAt":1514736000,
+                        "updatedAt":1517414400
+                    }
+                ]
     }
 }))
 app.use(route.post('/hospital/detail', ctx => {
@@ -35,15 +40,15 @@ app.use(route.post('/hospital/detail', ctx => {
     ctx.response.body = {
         "status": 0,
         "data": {
-                "id": 1,
-                "alias": "cyl",
-                "province": "北京",
-                "hospitalName":"北京垂杨柳医院",
-                "hospitalDesc":"desc",
-                "hospitalContent":"content",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
-            }
+            "id": 1,
+            "alias": "cyl",
+            "province": "北京",
+            "hospitalName":"北京垂杨柳医院",
+            "hospitalDesc":"desc",
+            "hospitalContent":"content",
+            "createdAt":1514736000,
+            "updatedAt":1517414400
+        }
     }
 }))
 
@@ -52,35 +57,41 @@ app.use(route.post('/doctor/list', ctx => {
     ctx.response.type = 'json'
     ctx.response.body = {
         "status": 0,
-        "data": [
-            {
-                "id": 1,
-                "doctorName": "李医生",
-                "gendar": "男",
-                "hospitalId":"1",
-                "hospitalName":"北京垂杨柳医院",
-                "departmentId":"2",
-                "departmentName":"骨科",
-                "order":33,
-                "doctorDesc":"desc",
-                "doctorContent":"content",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
-            },{
-                "id": 1,
-                "doctorName": "王医生",
-                "gendar": "女",
-                "hospitalId":"1",
-                "hospitalName":"北京垂杨柳医院",
-                "departmentId":"3",
-                "departmentName":"内科",
-                "order":55,
-                "doctorDesc":"desc",
-                "doctorContent":"content",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
-            }
-        ]
+        "data": {
+            "pageNum": 5,
+            "pageSize": 10,
+            "total": 52,
+            "pages": 6,
+            "list":[
+                {
+                    "id": 1,
+                    "doctorName": "李医生",
+                    "gendar": "男",
+                    "hospitalId":"1",
+                    "hospitalName":"北京垂杨柳医院",
+                    "departmentId":"2",
+                    "departmentName":"骨科",
+                    "order":33,
+                    "doctorDesc":"desc",
+                    "doctorContent":"content",
+                    "createdAt":1514736000,
+                    "updatedAt":1517414400
+                },{
+                    "id": 1,
+                    "doctorName": "王医生",
+                    "gendar": "女",
+                    "hospitalId":"1",
+                    "hospitalName":"北京垂杨柳医院",
+                    "departmentId":"3",
+                    "departmentName":"内科",
+                    "order":55,
+                    "doctorDesc":"desc",
+                    "doctorContent":"content",
+                    "createdAt":1514736000,
+                    "updatedAt":1517414400
+                }
+            ]
+        }
     }
 }))
 app.use(route.post('/doctor/detail', ctx => {
@@ -161,34 +172,144 @@ app.use(route.post('/feature/list', ctx => {
             {
                 "id": 1,
                 "featureName": "推荐",
-                "status":"1",
+                "status":0,
                 "category":"默认",
                 "lanOnly":true,
                 "isH5":false,
                 "h5Url":null,
-                "supportVersions":"A|B|C"
+                "supportVersions":"A|B|C",
                 "createdAt":1514736000,
                 "updatedAt":1517414400
             },{
                 "id": 2,
                 "featureName": "智慧医院",
-                "status":"2",
+                "status":2,
                 "category":"默认",
                 "lanOnly":true,
                 "isH5":true,
                 "h5Url":"/html/xinban1-1/zhihuiyiyuan/",
-                "supportVersions":"A|B|C"
+                "supportVersions":"A|B|C",
                 "createdAt":1514736000,
                 "updatedAt":1517414400
             },{
                 "id": 3,
-                "featureName": "视频",
-                "status":"1",
+                "featureName": "影视",
+                "status":0,
                 "category":"默认",
                 "lanOnly":true,
                 "isH5":false,
                 "h5Url":"",
-                "supportVersions":"A|B|C"
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "id": 4,
+                "featureName": "医普宣教",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":true,
+                "h5Url":"/html/xinban1-1/yipuxuanjiao/",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "id": 5,
+                "featureName": "广播",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":false,
+                "h5Url":"",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "id": 6,
+                "featureName": "生活服务",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":false,
+                "h5Url":"",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            }
+        ]
+    }
+}))
+
+// 医院的功能
+app.use(route.post('/hospitalfeature/list', ctx => {
+    ctx.response.type = 'json'
+    ctx.response.body = {
+        "status": 0,
+        "data": [
+            {
+                "id": 1,
+                "featureName": "推荐",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":false,
+                "h5Url":null,
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "id": 2,
+                "featureName": "智慧医院",
+                "status":2,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":true,
+                "h5Url":"/html/xinban1-1/zhihuiyiyuan/",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "id": 3,
+                "featureName": "影视",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":false,
+                "h5Url":"",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "id": 4,
+                "featureName": "医普宣教",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":true,
+                "h5Url":"/html/xinban1-1/yipuxuanjiao/",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "id": 5,
+                "featureName": "广播",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":false,
+                "h5Url":"",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "id": 6,
+                "featureName": "生活服务",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":false,
+                "h5Url":"",
+                "supportVersions":"A|B|C",
                 "createdAt":1514736000,
                 "updatedAt":1517414400
             }
@@ -357,17 +478,17 @@ app.use(route.post('/publish/list', ctx => {
         "data": [
             {
                 "publish": "A.1.5.23",
-                "createAt" 1514736000,
+                "createAt": 1514736000,
                 "publishdesc": "升级了某某功能..."
             },
             {
                 "publish": "A.1.6.01",
-                "createAt" 1514738000,
+                "createAt": 1514738000,
                 "publishdesc": "升级了某某功能..."
             },
             {
                 "publish": "A.2.0.00",
-                "createAt" 1514938000,
+                "createAt": 1514938000,
                 "publishdesc": "升级了某某功能..."
             }
 
