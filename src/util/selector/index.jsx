@@ -4,7 +4,6 @@ import './selector.scss'
 // 选择器
 export default class Index extends React.Component{
     constructor(props){
-        // list{value, text}, value, title, onPropsSelectChange, selectFirst
         super(props);
         this.state = {
             selectedVal      : '',
@@ -12,29 +11,21 @@ export default class Index extends React.Component{
         }
     }
 
-    // componentDidMount(){
     componentWillReceiveProps(nextProps){
+        if(this.props.selectValue === nextProps.selectValue) {
+            return false
+        }
         if(this.state.isFirstRecvProps) {
             this.setState({
-                isFirstRecvProps: false
+                isFirstRecvProps : false
             }, ()=>{
-
-                this.props = nextProps
-                if(this.props.value){
-                    this.setState({
-                        selectedVal :this.props.value
-                    }, ()=>{this.onPropsSelectChange()})
-                } else {
-                    this.setState({
-                        selectedVal :
-                            this.props.selectFirst && this.props.list.length > 0 ?
-                                this.props.list[0].value : ''
-                    }, ()=>{this.onPropsSelectChange()})
-                }
-
+                // console.log('recv', nextProps)
+                this.setState({
+                    selectedVal     : nextProps.selectValue
+                }, ()=>{
+                    this.onPropsSelectChange()
+                })
             })
-        } else {
-            return false
         }
     }
 
@@ -53,13 +44,14 @@ export default class Index extends React.Component{
         let onPropsSelectChange = typeof this.props.onPropsSelectChange === 'function';
         onPropsSelectChange && this.props.onPropsSelectChange(this.state.selectedVal);
     }
+
     render(){
         return (
             <div className="col-md-10">
+                <span>{this.props.title}</span>
                 <select className="form-control cate-select"
                     value={this.state.selectedVal}
                     onChange={(e) => this.onSelectChange(e)}>
-                    <option value="">{this.props.title}</option>
                     {
                         this.props.list.map(
                             (obj, index)=> <option value={obj.value} key={index}>{obj.text}</option>

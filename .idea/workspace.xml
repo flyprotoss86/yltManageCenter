@@ -2,41 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e33934a-4d68-48fa-831b-93d957ed0f5a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/page/hospital/hospital-detail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/hospital/hospital-list.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/hospital/hospital-selector.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/hospital/save.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/hospital/selector.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/settings/feature-detail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/settings/feature-list.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/settings/hospital-feature-detail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/settings/hospital-feature-list.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/_tmp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/cms/cms-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/cms/news-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/hospital/group-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/hospital/hospital-department-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/hospital/hospital-doctor-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/hospital/hospital-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/setting/feature-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/setting/hospital-feature-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/setting/menu-manage-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/setting/recc-manage-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/version/version-service.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/selector/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/selector/selector.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/hisapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/hisapi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/layout/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/layout/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/layout/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/layout/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/nav-side/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/nav-side/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/nav-top/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/nav-top/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/page-title/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/page-title/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/home/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/login/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/login/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/product/index/save.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/product/index/save.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/mm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/mm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testmp3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/settings/hospital-feature-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/settings/hospital-feature-list.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/selector/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/selector/index.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -63,15 +32,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/nav-side/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="mm.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/mm.jsx">
           <provider selected="true" editor-type-id="text-editor">
@@ -84,8 +44,8 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/selector/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="58" column="43" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="43" />
+            <state relative-caret-position="-215">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -96,10 +56,22 @@
       <file leaf-file-name="hospital-feature-list.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/settings/hospital-feature-list.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+            <state relative-caret-position="142">
+              <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
               <folding>
                 <element signature="e#1#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="category-selector.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/product/index/category-selector.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,8 +80,17 @@
       <file leaf-file-name="hospital-feature-detail.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/page/settings/hospital-feature-detail.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+            <state relative-caret-position="334">
+              <caret line="76" column="53" lean-forward="true" selection-start-line="76" selection-start-column="53" selection-end-line="76" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testmp3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/testmp3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -166,6 +147,8 @@
       <find>setState</find>
       <find>selectFirst</find>
       <find>console.log</find>
+      <find>this.props</find>
+      <find>isFirstRecvProps</find>
       <find>console</find>
     </findStrings>
     <replaceStrings>
@@ -205,10 +188,11 @@
         <option value="$PROJECT_DIR$/src/page/hospital/hospital-list.jsx" />
         <option value="$PROJECT_DIR$/src/service/setting/feature-manage-service.jsx" />
         <option value="$PROJECT_DIR$/src/service/setting/hospital-feature-service.jsx" />
-        <option value="$PROJECT_DIR$/src/util/selector/index.jsx" />
-        <option value="$PROJECT_DIR$/src/page/settings/hospital-feature-list.jsx" />
         <option value="$PROJECT_DIR$/src/app.jsx" />
         <option value="$PROJECT_DIR$/src/page/settings/hospital-feature-detail.jsx" />
+        <option value="$PROJECT_DIR$/src/util/selector/index.jsx" />
+        <option value="$PROJECT_DIR$/src/page/settings/hospital-feature-list.jsx" />
+        <option value="$PROJECT_DIR$/src/testmp3.html" />
       </list>
     </option>
   </component>
@@ -315,19 +299,6 @@
               <item name="page" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="yltManageCenter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yltManageCenter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yltManageCenter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yltManageCenter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="selector" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -346,11 +317,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/util/selector" />
       <recent name="$PROJECT_DIR$/src/page/settings" />
       <recent name="$PROJECT_DIR$/src/page/hospital" />
       <recent name="$PROJECT_DIR$/src/util/category2-selector" />
-      <recent name="$PROJECT_DIR$/src/service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -375,12 +346,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528774803565</updated>
-      <workItem from="1528774806447" duration="24453000" />
+      <workItem from="1528774806447" duration="30866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24453000" />
+    <option name="totallyTimeSpent" value="30866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="23" width="1505" height="1057" extended-state="0" />
@@ -644,30 +615,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/product/index/category-selector.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/setting/feature-service.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/selector/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="58" column="43" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -685,12 +636,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/settings/hospital-feature-list.jsx">
+    <entry file="file://$PROJECT_DIR$/src/util/pagination/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        <state relative-caret-position="323">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding>
-            <element signature="e#1#34#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/selector/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -706,10 +667,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/product/index/category-selector.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/settings/hospital-feature-list.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+          <folding>
+            <element signature="e#1#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testmp3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/settings/hospital-feature-detail.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+        <state relative-caret-position="334">
+          <caret line="76" column="53" lean-forward="true" selection-start-line="76" selection-start-column="53" selection-end-line="76" selection-end-column="53" />
         </state>
       </provider>
     </entry>

@@ -23,17 +23,22 @@ export default class HospitalFeatureList extends React.Component{
         };
     }
     componentDidMount(){
-        this.loadHospitalList();
-    }
-    loadHospitalList(){
+        // load HospitalList...
         _hospital.getHospitalList().then(res=>{
             this.setState({
                 hospitalList: res.map(o=>{return {value:o.id, text:o.hospitalName}})
+            }, ()=>{
+                if(this.state.hospitalList.length>0){
+                    this.setState({
+                        hospitalId : this.state.hospitalList[1].value
+                    })
+                }
             })
         })
     }
 
     onHospitalChange(hospitalId){
+        console.log('parent change: ', hospitalId)
         if(hospitalId){
             this.setState({
                 hospitalId
@@ -68,22 +73,21 @@ export default class HospitalFeatureList extends React.Component{
                     <td>{obj.h5Url}</td>
                     <td>{obj.supportVersions}</td>
                     <td>
-                        <Link className="opear" to={ `/hospital-feature-detail/feature/${obj.id}/hospital/${this.state.hospitalId}` }>编辑</Link>
+                        <Link className="opear" to={ `/hospital-feature-detail/${this.state.hospitalId}/feature/${obj.id}` }>编辑</Link>
                     </td>
                 </tr>
             );
         });
-        //list{key, value}, value, title, onPropsSelectChange, selectFirst
-        //
+
         return (
             <div id="page-wrapper">
                 <PageTitle title="管理功能列表">
                     <Selector list={this.state.hospitalList}
-                              title="请选择医院"
-                              selectFirst={true}
+                              title="请选择医院："
+                              selectValue={this.state.hospitalId}
                               onPropsSelectChange={(hospitalId)=>this.onHospitalChange(hospitalId)}
                     >
-                        <Link className="btn btn-primary" to={ `/feature/detail/` }>添加功能</Link>
+                        <Link className="btn btn-primary" to={ `/hospital-feature-detail/${this.state.hospitalId}/feature/` }>添加功能</Link>
                     </Selector>
 
                 </PageTitle>
