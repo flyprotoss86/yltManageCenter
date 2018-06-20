@@ -51,7 +51,7 @@ export default class HospitalList extends React.Component{
                     <td>{_mm.toDTstr(obj.createdAt)}</td>
                     <td>{_mm.toDTstr(obj.updatedAt)}</td>
                     <td>
-                        <Link className="opear" to={ `/hospital/detail/${obj.id}` }>编辑</Link>
+                        <Link className="opear" to={ `/hospital-detail/${obj.id}` }>编辑</Link>
                     </td>
                 </tr>
             );
@@ -59,7 +59,7 @@ export default class HospitalList extends React.Component{
         return (
             <div id="page-wrapper">
                 <PageTitle title="医院列表">
-                    <Link className="btn btn-primary" to={ `/hospital/detail/` }>添加</Link>
+                    <Link className="btn btn-primary" to={ `/hospital-detail/` }>添加</Link>
 
                 </PageTitle>
                 <TableList tableHeads={['ID', '医院名称', '简称', '城市', '添加时间', '更新时间', '编辑']}>

@@ -46,7 +46,7 @@ export default class FeatureList extends React.Component{
                     <td>{obj.h5Url}</td>
                     <td>{obj.supportVersions}</td>
                     <td>
-                        <Link className="opear" to={ `/feature/detail/${obj.id}` }>编辑</Link>
+                        <Link className="opear" to={ `/feature-detail/${obj.id}` }>编辑</Link>
                     </td>
                 </tr>
             );
@@ -54,7 +54,7 @@ export default class FeatureList extends React.Component{
         return (
             <div id="page-wrapper">
                 <PageTitle title="全部功能列表">
-                    <Link className="btn btn-primary" to={ `/feature/detail/` }>添加</Link>
+                    <Link className="btn btn-primary" to={ `/feature-detail/` }>添加</Link>
                 </PageTitle>
                 <TableList tableHeads={['ID', '功能名称', '状态', '分类', '限制局域网', 'H5功能','H5 url', '支持版本', '编辑']}>
                     {listBody}

@@ -2,21 +2,21 @@
 import React        from 'react';
 import { Link }     from 'react-router-dom';
 import MUtil        from 'util/mm.jsx'
-import HospitalFeature      from 'service/setting/hospital-feature-service.jsx'
+import HospitalMenu      from 'service/setting/hospital-menu-service.jsx'
 import Hospital     from 'service/hospital/hospital-service.jsx'
 import PageTitle    from 'component/page-title/index.jsx';
 import TableList    from 'util/table-list/index.jsx';
 import Selector     from 'util/selector/index.jsx'
 
 const _mm   = new MUtil();
-const _feature = new HospitalFeature();
+const _menu = new HospitalMenu();
 const _hospital = new Hospital();
 
-export default class HospitalFeatureList extends React.Component{
+export default class HospitalMenuList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            featureList     : [],
+            menuList     : [],
             hospitalList    : [],
             hospitalId      : ''
         };
@@ -29,7 +29,7 @@ export default class HospitalFeatureList extends React.Component{
             }, ()=>{
                 if(this.state.hospitalList.length>0){
                     this.setState({
-                        hospitalId : this.state.hospitalList[1].value
+                        hospitalId : this.state.hospitalList[0].value
                     })
                 }
             })
@@ -43,14 +43,14 @@ export default class HospitalFeatureList extends React.Component{
                 hospitalId
             }, ()=>{
 
-                _feature.getFeatureList(hospitalId).then(res => {
+                _menu.getMenuList(hospitalId).then(res => {
                     this.setState({
-                        featureList: res
+                        menuList: res
                     });
 
                 }, errMsg => {
                     this.setState({
-                        featureList : []
+                        menuList : []
                     });
                     _mm.errorTips(errMsg);
                 });
@@ -60,19 +60,17 @@ export default class HospitalFeatureList extends React.Component{
     }
 
     render(){
-        let listBody = this.state.featureList.map((obj, index) => {
+        let listBody = this.state.menuList.map((obj, index) => {
             return (
                 <tr key={index}>
-                    <td>{obj.featureId}</td>
-                    <td>{obj.featureName}</td>
+                    <td>{obj.id}</td>
+                    <td>{obj.menuName}</td>
                     <td>{_mm.getStatusStr(obj.status)}</td>
-                    <td>{obj.category}</td>
-                    <td>{_mm.getBoolStr(obj.lanOnly)}</td>
-                    <td>{_mm.getBoolStr(obj.isH5)}</td>
-                    <td>{obj.h5Url}</td>
-                    <td>{obj.supportVersions}</td>
+                    <td>{obj.featureName}</td>
+                    <td>{obj.url}</td>
+                    <td>{obj.order}</td>
                     <td>
-                        <Link className="opear" to={ `/hospital-feature-detail/${this.state.hospitalId}/feature/${obj.featureId}` }>配置</Link>
+                        <Link className="opear" to={ `/hospital-menu-detail/${this.state.hospitalId}/menu/${obj.id}` }>配置</Link>
                     </td>
                 </tr>
             );
@@ -80,17 +78,16 @@ export default class HospitalFeatureList extends React.Component{
 
         return (
             <div id="page-wrapper">
-                <PageTitle title="管理功能列表">
+                <PageTitle title="管理菜单列表">
                     <Selector list={this.state.hospitalList}
                               title="请选择医院："
-                              selectValue={this.state.hospitalId}
                               onPropsSelectChange={(hospitalId)=>this.onHospitalChange(hospitalId)}
                     >
-                        <Link className="btn btn-primary" to={ `/hospital-feature-detail/${this.state.hospitalId}/feature/` }>添加功能</Link>
+                        <Link className="btn btn-primary" to={ `/hospital-menu-detail/${this.state.hospitalId}/menu/` }>添加菜单</Link>
                     </Selector>
 
                 </PageTitle>
-                <TableList tableHeads={['ID', '功能名称', '状态', '分类', '限制局域网', 'H5功能','H5 url', '支持版本', '编辑']}>
+                <TableList tableHeads={['ID', '菜单名称', '状态', '对应功能', 'url', '顺序', '编辑']}>
                     {listBody}
                 </TableList>
             </div>

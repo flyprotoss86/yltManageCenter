@@ -6,27 +6,27 @@ export default class Index extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            selectedVal      : '',
-            isFirstRecvProps : true
+            selectedVal      : ''
         }
     }
 
-    componentWillReceiveProps(nextProps){
-        if(this.props.selectValue === nextProps.selectValue) {
+    componentWillReceiveProps(nextProps) {
+        if((this.props.selectValue === undefined || this.props.selectValue === nextProps.selectValue)
+            &&
+            (this.props.list === undefined || this.props.list === nextProps.list)
+        )
+        {
             return false
         }
-        if(this.state.isFirstRecvProps) {
-            this.setState({
-                isFirstRecvProps : false
-            }, ()=>{
-                // console.log('recv', nextProps)
-                this.setState({
-                    selectedVal     : nextProps.selectValue
-                }, ()=>{
-                    this.onPropsSelectChange()
-                })
-            })
-        }
+        console.log(this.props , nextProps, this.props.selectValue, this.props.selectValue !== undefined)
+
+        this.setState({
+            selectedVal     : (nextProps.selectValue !== undefined ? nextProps.selectValue : (
+                (nextProps.list && nextProps.list.length > 0) ? nextProps.list[0].value : ''
+            ))
+        }, ()=>{
+            this.onPropsSelectChange()
+        })
     }
 
     onSelectChange(e){
@@ -34,6 +34,7 @@ export default class Index extends React.Component{
         this.setState({
             selectedVal     : newValue
         }, ()=>{
+            console.log(this.state.selectedVal)
             this.onPropsSelectChange()
         });
     }
@@ -53,7 +54,7 @@ export default class Index extends React.Component{
                     value={this.state.selectedVal}
                     onChange={(e) => this.onSelectChange(e)}>
                     {
-                        this.props.list.map(
+                        this.props.list && this.props.list.map(
                             (obj, index)=> <option value={obj.value} key={index}>{obj.text}</option>
                         )
                     }

@@ -240,35 +240,12 @@ app.use(route.post('/feature/list', ctx => {
     }
 }))
 
-// 医院的功能
-app.use(route.post('/hospitalfeature/list', ctx => {
+app.use(route.post('/feature/detail', ctx => {
     ctx.response.type = 'json'
     ctx.response.body = {
         "status": 0,
-        "data": [
+        "data":
             {
-                "id": 1,
-                "featureName": "推荐",
-                "status":0,
-                "category":"默认",
-                "lanOnly":true,
-                "isH5":false,
-                "h5Url":null,
-                "supportVersions":"A|B|C",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
-            },{
-                "id": 2,
-                "featureName": "智慧医院",
-                "status":2,
-                "category":"默认",
-                "lanOnly":true,
-                "isH5":true,
-                "h5Url":"/html/xinban1-1/zhihuiyiyuan/",
-                "supportVersions":"A|B|C",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
-            },{
                 "id": 3,
                 "featureName": "影视",
                 "status":0,
@@ -279,8 +256,51 @@ app.use(route.post('/hospitalfeature/list', ctx => {
                 "supportVersions":"A|B|C",
                 "createdAt":1514736000,
                 "updatedAt":1517414400
+            }
+    }
+}))
+
+// 医院的功能
+app.use(route.post('/hospitalfeature/list', ctx => {
+    ctx.response.type = 'json'
+    ctx.response.body = {
+        "status": 0,
+        "data": [
+            {
+                "featureId": 1,
+                "featureName": "推荐",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":false,
+                "h5Url":null,
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
             },{
-                "id": 4,
+                "featureId": 2,
+                "featureName": "智慧医院",
+                "status":2,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":true,
+                "h5Url":"/html/xinban1-1/zhihuiyiyuan/",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "featureId": 3,
+                "featureName": "影视",
+                "status":0,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":false,
+                "h5Url":"",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            },{
+                "featureId": 4,
                 "featureName": "医普宣教",
                 "status":0,
                 "category":"默认",
@@ -290,32 +310,33 @@ app.use(route.post('/hospitalfeature/list', ctx => {
                 "supportVersions":"A|B|C",
                 "createdAt":1514736000,
                 "updatedAt":1517414400
-            },{
-                "id": 5,
-                "featureName": "广播",
-                "status":0,
-                "category":"默认",
-                "lanOnly":true,
-                "isH5":false,
-                "h5Url":"",
-                "supportVersions":"A|B|C",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
-            },{
-                "id": 6,
-                "featureName": "生活服务",
-                "status":0,
-                "category":"默认",
-                "lanOnly":true,
-                "isH5":false,
-                "h5Url":"",
-                "supportVersions":"A|B|C",
-                "createdAt":1514736000,
-                "updatedAt":1517414400
             }
         ]
     }
 }))
+
+// 医院的功能详情
+app.use(route.post('/hospitalfeature/detail', ctx => {
+    ctx.response.type = 'json'
+    ctx.response.body = {
+        "status": 0,
+        "data":
+            {
+                "featureid": 2,
+                "featureName": "智慧医院",
+                "status":2,
+                "category":"默认",
+                "lanOnly":true,
+                "isH5":true,
+                "h5Url":"/html/xinban1-1/zhihuiyiyuan/",
+                "supportVersions":"A|B|C",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            }
+
+    }
+}))
+
 
 // 菜单
 app.use(route.post('/menu/list', ctx => {
@@ -324,33 +345,61 @@ app.use(route.post('/menu/list', ctx => {
         "status": 0,
         "data": [
             {
-                "id": 1,
-                "groupId": 15,
+                "id": 12,
                 "menuName":"推荐",
+                "url" : "",
                 "order": 11,
                 "status": 1,
+                "featureId": 1,
+                "featureName": "推荐",
                 "createdAt":1514736000,
                 "updatedAt":1517414400
             },{
-                "id": 2,
-                "groupId": 15,
+                "id": 23,
                 "menuName":"智慧医院",
-                "order": 12,
+                "url" : "/url/zhihuihospital/",
+                "order": 16,
                 "status": 1,
+                "featureId": 2,
+                "featureName": "智慧医院",
                 "createdAt":1514736000,
                 "updatedAt":1517414400
             },{
-                "id": 3,
-                "groupId": 15,
-                "menuName":"视频",
-                "order": 15,
+                "id": 35,
+                "menuName":"影视",
+                "url" : "",
+                "order": 23,
                 "status": 1,
+                "featureId": 3,
+                "featureName": "影视",
                 "createdAt":1514736000,
                 "updatedAt":1517414400
             }
         ]
     }
 }))
+
+
+// 菜单
+app.use(route.post('/menu/detail', ctx => {
+    ctx.response.type = 'json'
+    ctx.response.body = {
+        "status": 0,
+        "data":
+            {
+                "id": 23,
+                "menuName":"智慧医院",
+                "url" : "/url/zhihuihospital/",
+                "order": 16,
+                "status": 1,
+                "featureId": 2,
+                "featureName": "智慧医院",
+                "createdAt":1514736000,
+                "updatedAt":1517414400
+            }
+    }
+}))
+
 
 // 推荐(app推荐、智慧医院推荐)
 app.use(route.post('/recc/list', ctx => {

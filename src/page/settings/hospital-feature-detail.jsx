@@ -2,37 +2,52 @@ import React                from 'react';
 import MUtil                from 'util/mm.jsx'
 import Feature             from 'service/setting/feature-service.jsx'
 import PageTitle            from 'component/page-title/index.jsx';
+import Selector     from 'util/selector/index.jsx'
+import HospitalFeature from "service/setting/hospital-feature-service.jsx";
 
 const _mm           = new MUtil();
 const _feature      = new Feature();
+const _hospitalFeature = new HospitalFeature()
 
 export default class FeatureDetail extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            featureId                   : this.props.match.params.featureId,
-            hospitalId                  : this.props.match.params.hospitalId,
+            allFeature           : null,
+            featureId            : this.props.match.params.featureId,
+            hospitalId           : this.props.match.params.hospitalId,
             featureName          : '',
             status               : '',
             category             : '',
             lanOnly              : '',
             isH5                 : '',
             h5Url                : '',
-            supportVersions      : ''
+            supportVersions      : '',
+
         }
+        console.log(this.props.match.params.featureId)
+        console.log(this.props.match.params.hospitalId)
     }
     componentDidMount(){
-        this.loaditem();
-    }
-    // 加载功能详情
-    loaditem(){
+        // 加载功能详情
         // 有id的时候，表示是编辑功能，需要表单回填
-        if(this.state.id){
-            _feature.getFeatureDetail(this.state.id).then((res) => {
+        if(this.state.featureId){
+            console.log('id')
+            _hospitalFeature.getFeatureDetail(this.state.hospitalId, this.state.featureId).then((res) => {
                 this.setState(res);
             }, (errMsg) => {
                 _mm.errorTips(errMsg);
             });
+        } else {
+            console.log('features')
+            //加载所有功能
+            _feature.getFeatureList().then(res=>{
+                this.setState({
+                    allFeature:res.map(o=>{return {value:o.id, text:o.featureName}})
+                })
+
+
+            })
         }
     }
 
@@ -44,23 +59,29 @@ export default class FeatureDetail extends React.Component{
         });
     }
 
+    onFeatureChange(featureId){
+        this.state.featureId = featureId
+    }
+
     // 提交表单
     onSubmit(){
         let item = {
             featureName      : this.state.featureName,
+            featureId        : this.state.featureId,
+            hospitalId       : this.state.hospitalId,
             status           : this.state.status,
             category         : this.state.category,
             lanOnly          : this.state.lanOnly,
             isH5             : this.state.isH5,
-            supportVersions  : '',
+            url              : this.state.h5Url
         }
         if(this.state.id){
             item.id = this.state.id;
         }
         // 表单验证成功
-        _feature.updateFeature(item).then(res=>{
+        _hospitalFeature.updateFeature(item).then(res=>{
             _mm.successTips(res);
-            this.props.history.push('/feature');
+            this.props.history.push('/hospital-feature');
         }, (errMsg) => {
             _mm.errorTips(errMsg);
         })
@@ -70,17 +91,30 @@ export default class FeatureDetail extends React.Component{
             <div id="page-wrapper">
                 <PageTitle title={this.state.featureId ? '编辑功能' : '添加功能'} />
                 <div className="form-horizontal">
-                    <div className="form-group">
-                        <label className="col-md-2 control-label">功能名称</label>
-                        <div className="col-md-5">
-                            <input type="text" className="form-control" 
-                                placeholder="请输入功能名称"
-                                name="featureName"
-                                value={this.state.featureName}
-                                onChange={(e) => this.onValueChange(e)}/>
-                        </div>
-                    </div>
+                    {
+                        this.state.allFeature && this.state.allFeature.length > 0 ? (
+                            <div className="form-group">
+                                <label className="col-md-2 control-label">选择功能</label>
+                                <div className="col-md-5">
 
+                            <Selector list={this.state.allFeature}
+                                      onPropsSelectChange={(_id)=>this.onFeatureChange(_id)}
+                            /></div></div>
+                                )
+                            : (
+                            <div className="form-group">
+                                <label className="col-md-2 control-label">功能名称</label>
+                                <div className="col-md-5">
+                                    <input type="text" className="form-control"
+                                           placeholder="请输入功能名称"
+                                           name="featureName"
+                                           readOnly={true}
+                                           value={this.state.featureName}
+                                           onChange={(e) => this.onValueChange(e)}/>
+                                </div>
+                            </div>
+                        )
+                    }
                     <div className="form-group">
                         <label className="col-md-2 control-label">功能分类</label>
                         <div className="col-md-5">

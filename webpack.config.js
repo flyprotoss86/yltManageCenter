@@ -93,6 +93,10 @@ module.exports = {
         // 独立css文件
         new ExtractTextPlugin("css/[name].css"),
         // 提出公共模块
+        // new webpack.optimize.splitChunks({
+        //         name : 'common',
+        //         filename: 'js/base.js'
+        // })
         new webpack.optimize.CommonsChunkPlugin({
             name : 'common',
             filename: 'js/base.js'

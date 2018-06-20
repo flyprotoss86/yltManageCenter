@@ -48,13 +48,13 @@ class NavSide extends React.Component{
                                     <NavLink to="/hospital-feature/" activeClassName="active-menu">功能配置</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/menu" activeClassName="active-menu">菜单配置</NavLink>
+                                    <NavLink to="/hospital-menu" activeClassName="active-menu">菜单配置</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/recc/type/appindex" activeClassName="active-menu">推荐配置</NavLink>
+                                    <NavLink to="/hospital-recc/type/appindex" activeClassName="active-menu">推荐配置</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/recc/type/zhihui" activeClassName="active-menu">智慧医院</NavLink>
+                                    <NavLink to="/hospital-recc/type/zhihui" activeClassName="active-menu">智慧医院</NavLink>
                                 </li>
                             </ul>
                         </li>

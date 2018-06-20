@@ -18,7 +18,7 @@ export default class HospitalFeature{
     }
 
     // 获取功能详情
-    getFeatureDetail(featureId, hospitalId){
+    getFeatureDetail(hospitalId, featureId){
         return _mm.request({
             type    : 'post',
             url     : '/hospitalfeature/detail',
@@ -34,7 +34,7 @@ export default class HospitalFeature{
     updateFeature(feature){
         return _mm.request({
             type    : 'post',
-            url     : '/feature/set_feature',
+            url     : '/hospitalfeature/set_feature',
             data    : feature
         });
     }

@@ -1,10 +1,3 @@
-/*
-* @Author: Rosen
-* @Date:   2018-01-13 11:27:21
-* @Last Modified by:   Rosen
-* @Last Modified time: 2018-02-05 14:02:20
-*/  
-
 import React            from 'react';
 import ReactDOM         from 'react-dom';
 import { BrowserRouter as Router, Switch, Redirect, Route, Link } from 'react-router-dom'
@@ -26,6 +19,9 @@ import FeatureList from "page/settings/feature-list.jsx"
 import FeatureDetail from "page/settings/feature-detail.jsx"
 import HospitalFeatureList from "page/settings/hospital-feature-list.jsx"
 import HospitalFeatureDetail from "page/settings/hospital-feature-detail.jsx"
+import HospitalMenuList from "page/settings/hospital-menu-list.jsx"
+import HospitalMenuDetail from "page/settings/hospital-menu-detail.jsx"
+import HospitalReccIndex from "page/settings/hospital-recc-index.jsx"
 
 class App extends React.Component{
     render(){
@@ -34,16 +30,22 @@ class App extends React.Component{
                 <Switch>
                     <Route exact path="/" component={Home}/>
 
-                    <Route path="/hospital/list" component={HospitalList}/>
-                    <Route path="/hospital/detail/:id?" component={HospitalDetail}/>
-                    <Redirect exact from="/hospital" to="/hospital/list"/>
+                    <Route path="/hospital" component={HospitalList}/>
+                    <Route path="/hospital-detail/:id?" component={HospitalDetail}/>
 
-                    <Route path="/feature/list" component={FeatureList}/>
-                    <Route path="/feature/detail/:id?" component={FeatureDetail}/>
-                    <Redirect exact from="/feature" to="/feature/list"/>
+                    <Route path="/feature" component={FeatureList}/>
+                    <Route path="/feature-detail/:id?" component={FeatureDetail}/>
 
-                    <Route path="/hospital-feature/:id?" component={HospitalFeatureList}/>
+                    <Route path="/hospital-feature" component={HospitalFeatureList}/>
                     <Route path="/hospital-feature-detail/:hospitalId/feature/:featureId?" component={HospitalFeatureDetail}/>
+
+                    <Route path="/hospital-menu" component={HospitalMenuList}/>
+                    <Route path="/hospital-menu-detail/:hospitalId/menu/:menuId?" component={HospitalMenuDetail}/>
+
+                    <Route path="/hospital-recc/type/:reccType" component={HospitalReccIndex}/>
+
+                    {/*<Route path="/hospital-recc/:id?" component={HospitalFeatureList}/>*/}
+                    {/*<Route path="/hospital-recc-detail/:hospitalId/recc/:reccId?" component={HospitalFeatureDetail}/>*/}
 
                     <Route path="/product" component={ProductRouter}/>
                     <Route path="/product-category" component={ProductRouter}/>

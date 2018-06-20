@@ -2,6 +2,7 @@ import React                from 'react';
 import MUtil                from 'util/mm.jsx'
 import Feature             from 'service/setting/feature-service.jsx'
 import PageTitle            from 'component/page-title/index.jsx';
+import Selector     from 'util/selector/index.jsx'
 
 const _mm           = new MUtil();
 const _feature      = new Feature();
@@ -28,9 +29,23 @@ export default class FeatureDetail extends React.Component{
         // 有id的时候，表示是编辑功能，需要表单回填
         if(this.state.id){
             _feature.getFeatureDetail(this.state.id).then((res) => {
-                this.setState(res);
+                this.setState({
+                    featureName          : res.featureName,
+                    status               : res.status,
+                    category             : res.category,
+                    lanOnly              : res.lanOnly,
+                    isH5                 : res.isH5,
+                    h5Url                : res.h5Url,
+                    supportVersions      : res.supportVersions,
+                    listBool             : [{value:true,text:'是'},{value:false,text:'否'}]
+                });
+                console.log(res)
             }, (errMsg) => {
                 _mm.errorTips(errMsg);
+            });
+        } else {
+            this.setState({
+                listBool             : [{value:true,text:'是'},{value:false,text:'否'}]
             });
         }
     }
@@ -94,22 +109,20 @@ export default class FeatureDetail extends React.Component{
                     <div className="form-group">
                         <label className="col-md-2 control-label">限制局域网访问</label>
                         <div className="col-md-5">
-                            <input type="text" className="form-control"
-                                   placeholder="是否限制局域网访问"
-                                   name="lanOnly"
-                                   value={this.state.lanOnly}
-                                   onChange={(e) => this.onValueChange(e)}/>
+                            <Selector
+                                list={this.state.listBool}
+                                selectValue={this.state.lanOnly}
+                            />
                         </div>
                     </div>
 
                     <div className="form-group">
                         <label className="col-md-2 control-label">是否h5功能</label>
                         <div className="col-md-5">
-                            <input type="text" className="form-control"
-                                   placeholder="是否h5功能"
-                                   name="isH5"
-                                   value={this.state.isH5}
-                                   onChange={(e) => this.onValueChange(e)}/>
+                            <Selector
+                                list={this.state.listBool}
+                                selectValue={this.state.isH5}
+                            />
                         </div>
                     </div>
 

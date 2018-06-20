@@ -32,3 +32,61 @@
         }
     }
 }
+
+.box-wrapper{
+    width: 100%;
+    height: 800px;
+    border:1px solid #333;
+    padding:5px;
+    background: #eaeaea;
+    box-sizing: border-box;
+}
+.box-wrapper::after{
+    content: '';
+    display: block;
+    width:0px;
+    height: 0px;
+    clear:both;
+}
+.box-drag{
+    cursor: move;
+    box-sizing: border-box;
+    padding: 3px 3px 0 0;
+    position: absolute;
+}
+.box-drag > div{
+    width: 100%;
+    height: 100%;
+    background: #2EA7EB;
+    border-radius: 5px;
+    position: relative;
+
+    .chk{
+        position: absolute;
+        left:0;
+        top:0;
+        z-index: 99;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .del{
+        position: absolute;
+        right:0;
+        top:0;
+        z-index: 99;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+}
+.box-drag.selected > div{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #2EA7EB;
+    border-radius: 5px;
+    border:5px solid #ffb53e;
+}
